@@ -25,12 +25,19 @@
         </table>
       </div>
       <div class="elephant-pagination">
-          <p>PAGE 1 OF 10</p>
-          <div class="pagination">
-              <a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-              <a href="#" v-for="(page, index) in pages" :key="index" @click.prevent="changeClass" :class="{'page.active' : 'active'}">{{ page.pageNum }}</a>
-              <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-          </div>
+        <p>PAGE 1 OF 10</p>
+        <div class="pagination">
+          <a href="#"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+          <a
+            href="#"
+            v-for="(page, index) in pages"
+            :key="index"
+            @click.prevent="!page.isActive"
+            :class="page.isActive ? 'active' : ''"
+            >{{ page.pageNum }}</a
+          >
+          <a href="#"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
       </div>
     </div>
   </div>
@@ -59,7 +66,7 @@ export default {
         {
           name: "Name",
           species: "Species",
-          sex: "Sex", 
+          sex: "Sex",
           affiliation: "Affiliation",
           dob: "Dob",
         },
@@ -99,15 +106,14 @@ export default {
           dob: "Dob",
         },
       ],
-      pages: [{
-          pageNum: 1, isActive: true},  {pageNum: 2, isActive: false}],
-      activeClass: false,
+      pages: [
+        {
+          pageNum: 1,
+          isActive: true,
+        },
+        { pageNum: 2, isActive: false },
+      ],
     };
-  },
-  methods: {
-      changeClass(active) {
-          this.activeClass = !active;
-      }
   }
 };
 </script>
@@ -136,11 +142,11 @@ export default {
 }
 
 .elephant-table table tr {
-    height: 4rem;
+  height: 4rem;
 }
 
 .elephant-table table tr:first-of-type {
-    background-color: #e5e5e5;
+  background-color: #e5e5e5;
 }
 
 .elephant-table table th,
@@ -150,7 +156,7 @@ export default {
 }
 
 .elephant-table table td {
-    color: #848383;
+  color: #848383;
 }
 
 .elephant-table table tr:not(:first-of-type):nth-child(odd) {
@@ -158,14 +164,14 @@ export default {
 }
 
 .elephant-pagination {
-    padding: 1.5rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .elephant-pagination p {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .elephant-pagination .pagination {
@@ -177,23 +183,28 @@ export default {
   float: left;
   padding: 8px 14px;
   text-decoration: none;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   border: 1px solid #dfe3e8;
   border-radius: 4px;
   margin: 0 4px;
 }
 
+.elephant-pagination .pagination a.active {
+    border: 1px solid #0546E0;
+    color: #0546E0;
+}
+
 .elephant-pagination .pagination a:first-child:hover,
 .elephant-pagination .pagination a:last-child:hover {
-    background: #c8cfd5;
+  background: #c8cfd5;
 }
 
 .elephant-pagination .pagination a:first-child:hover i,
 .elephant-pagination .pagination a:last-child:hover i {
-    color: #fff;
+  color: #fff;
 }
 
 .elephant-pagination .pagination i {
-    color: #c4cdd5;
+  color: #c4cdd5;
 }
 </style>
