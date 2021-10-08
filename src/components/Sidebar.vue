@@ -61,6 +61,7 @@ export default {
 
 .sidebar-menu a {
   text-decoration: none;
+  color: #30425a;
 }
 
 .sidebar-menu li {
@@ -72,5 +73,9 @@ export default {
 
 .sidebar-menu li.active {
   background: #b9b9ff;
+}
+
+.sidebar-menu li.active a {
+  color: #fff;
 }
 </style>

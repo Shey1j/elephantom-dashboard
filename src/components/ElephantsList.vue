@@ -188,6 +188,11 @@ export default {
     background: #c8cfd5;
 }
 
+.elephant-pagination .pagination a:first-child:hover i,
+.elephant-pagination .pagination a:last-child:hover i {
+    color: #fff;
+}
+
 .elephant-pagination .pagination i {
     color: #c4cdd5;
 }
