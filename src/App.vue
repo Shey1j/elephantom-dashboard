@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 /* @font-face {
   font-family: "SF Pro Text";
   src: url(./assets/fonts/FontsFree-Net-SFProText-Regular.tff), format('ttf');
@@ -29,5 +29,6 @@ export default {
 
 body {
   background: #f5f8ff;
+  font-family: 'Overpass', sans-serif;
 }
 </style>

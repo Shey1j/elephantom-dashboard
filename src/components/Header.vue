@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-header">
       <div class="header-content">
-          <h3>Acumen Digital Interview Task / Elephantom <span></span></h3>
+          <h3>Acumen Digital Interview Task / Elephantom <span v-show="$router.currentRoute.path !== '/'"> <i class="fa fa-chevron-right" aria-hidden="true"></i> Elephant</span></h3>
       </div>
   </div>
 </template>
