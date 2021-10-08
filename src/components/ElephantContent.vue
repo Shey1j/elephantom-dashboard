@@ -51,4 +51,16 @@ export default {
     padding: 1rem 0;
     border-bottom: 1px solid rgba(196, 205, 213, 0.62)
 }
+
+.elephant-name h1, .elephant-name p { 
+    color: #30425a;
+}
+
+.elephant-description {
+    margin-top: 10px;
+}
+
+.elephant-description p {
+    color: #30425a;
+}
 </style>
